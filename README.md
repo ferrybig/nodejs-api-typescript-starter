@@ -12,5 +12,5 @@ Node.js api boilerplate built on TypeScript
 - Model validation
 - swagger docs
 - Database connection
-- Unit testing ( jest)
+- Unit testing (jest)
 - Object mapping
