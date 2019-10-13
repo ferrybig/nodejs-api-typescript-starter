@@ -7,3 +7,5 @@ Node.js api boilerplate built on TypeScript
 - Authentication and Authorization
 - Base controller
 - Catching 404
+- Set up events
+- Dependecy injection
