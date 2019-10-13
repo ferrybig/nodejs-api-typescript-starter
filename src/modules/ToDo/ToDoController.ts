@@ -1,6 +1,6 @@
 import { JsonController, Get } from "routing-controllers";
 
-@JsonController()
+@JsonController("/todos")
 class ToDoController {
   @Get()
   getAll() {

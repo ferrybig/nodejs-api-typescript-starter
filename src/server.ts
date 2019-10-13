@@ -3,41 +3,38 @@ import dotenv from "dotenv";
 import express, { Application } from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
+import morgan from "morgan";
+import helmet from "helmet";
+import compression from "compression";
 
 import { useExpressServer } from "routing-controllers";
 
 dotenv.config();
 
-interface ApplicationServer {
-  configureRoutes(): void;
-  configureMiddleware(): void;
-  bootstrap(): void;
-}
+class Server {
+  private static app: Application = express();
 
-class Server implements ApplicationServer {
-  private app: Application;
-
-  /**
-   *
-   */
-  constructor() {
-    this.app = express();
-  }
-
-  configureRoutes(): void {
+  private static configureRoutes(): void {
     useExpressServer(this.app, {
       cors: true,
-      controllers: [`${__dirname}/**/*Controller.js`]
+      controllers: [`${__dirname}/**/*Controller.{ts,js}`]
     });
   }
 
-  configureMiddleware(): void {
+  private static configureMiddleware(): void {
     this.app.use(cors());
-    this.app.use(bodyParser({ extended: true }));
+    this.app.use(compression());
+    this.app.use(bodyParser.urlencoded({ extended: true }));
+    this.app.use(bodyParser.json());
+    this.app.use(helmet());
+    this.app.use(morgan("dev"));
   }
 
-  bootstrap(): void {
-    throw new Error("Method not implemented.");
+  static bootstrap(): Application {
+    this.configureMiddleware();
+    this.configureRoutes();
+
+    return this.app;
   }
 }
 
