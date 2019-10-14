@@ -1,6 +1,18 @@
 import { Service } from "typedi";
 
 @Service()
-class ToDoService {}
-
-export default ToDoService;
+export default class ToDoService {
+  getAllToDos() {
+    return [
+      {
+        name: "Item One"
+      },
+      {
+        name: "Item Two"
+      },
+      {
+        name: "Item Three"
+      }
+    ];
+  }
+}

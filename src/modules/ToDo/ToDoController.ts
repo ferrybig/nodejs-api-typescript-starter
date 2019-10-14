@@ -1,18 +1,12 @@
 import { JsonController, Get } from "routing-controllers";
+import ToDoService from "./ToDoService";
 
 @JsonController("/todos")
-class ToDoController {
+export default class ToDoController {
+  constructor(private todoService: ToDoService) {}
+
   @Get()
   getAll() {
-    return [
-      {
-        name: "Item One"
-      },
-      {
-        name: "Item Two"
-      }
-    ];
+    return this.todoService.getAllToDos();
   }
 }
-
-export default ToDoController;

@@ -1,7 +1,5 @@
-import BaseEntity from "../../common/BaseEntity";
+import BaseEntity from "common/BaseEntity";
 
-interface ToDoEntity extends BaseEntity {
+export default class ToDoEntity extends BaseEntity {
   name: string;
 }
-
-export default ToDoEntity;

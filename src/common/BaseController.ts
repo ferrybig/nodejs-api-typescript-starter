@@ -1,3 +1,4 @@
-class BaseController {}
+import { JsonController } from "routing-controllers";
 
-export default BaseController;
+@JsonController()
+export default class BaseController {}

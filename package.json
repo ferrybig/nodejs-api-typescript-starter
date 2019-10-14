@@ -4,7 +4,7 @@
   "description": "Node.js api boilerplate built on TypeScript",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "dev": "nodemon --exec ts-node ./src/index.ts"
   },
   "repository": {
@@ -12,8 +12,8 @@
     "url": "git+https://github.com/escalonc/nodejs-api-typescript-starter.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Christopher Escalon <escalonchristopher@gmail.com>",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/escalonc/nodejs-api-typescript-starter/issues"
   },
@@ -47,6 +47,8 @@
     "@types/multer": "^1.3.10",
     "@types/node": "^12.7.11",
     "@types/signale": "^1.2.1",
+    "@types/swagger-ui-express": "^3.0.1",
+    "husky": "^3.0.9",
     "jest": "^24.9.0",
     "nodemon": "^1.19.3",
     "prettier": "^1.18.2",
