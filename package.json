@@ -4,8 +4,10 @@
   "description": "Node.js api boilerplate built on TypeScript",
   "main": "index.js",
   "scripts": {
+    "start": "node ",
     "test": "jest",
-    "dev": "nodemon --exec ts-node ./src/index.ts"
+    "dev": "nodemon --exec ts-node ./src/index.ts",
+    "format": "prettier --write 'src/**/*.{ts,json}'"
   },
   "repository": {
     "type": "git",
@@ -16,6 +18,14 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/escalonc/nodejs-api-typescript-starter/issues"
+  },
+  "jest": {
+    "preset": "ts-jest"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run format && npm run test"
+    }
   },
   "homepage": "https://github.com/escalonc/nodejs-api-typescript-starter#readme",
   "dependencies": {
@@ -52,6 +62,7 @@
     "jest": "^24.9.0",
     "nodemon": "^1.19.3",
     "prettier": "^1.18.2",
+    "ts-jest": "^24.1.0",
     "ts-node": "^8.4.1",
     "tslint": "^5.20.0",
     "typescript": "^3.6.3"
