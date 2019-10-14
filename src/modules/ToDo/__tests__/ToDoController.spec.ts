@@ -1,1 +1,3 @@
-test("To do controller", () => {});
+describe("To do controller", () => {
+  test("controller should return a collection", () => {});
+});
