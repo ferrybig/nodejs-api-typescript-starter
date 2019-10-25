@@ -16,6 +16,8 @@ import swaggerDocument from "./swagger.json";
 import { useContainer as ormUseContainer } from "typeorm";
 import { Container } from "typedi";
 
+import { createConnection } from "typeorm";
+
 dotenv.config();
 
 export default class Server {
@@ -24,6 +26,12 @@ export default class Server {
   private static configureServices(): void {
     routingUseContainer(Container);
     ormUseContainer(Container);
+  }
+
+  private static configureDatabase(): void {
+    createConnection().catch(error =>
+      console.log("Error when trying to create a database", error)
+    );
   }
 
   private static configureRoutes(): void {
@@ -50,6 +58,7 @@ export default class Server {
 
   static bootstrap(): Application {
     this.configureServices();
+    this.configureDatabase();
     this.configureMiddleware();
     this.configureRoutes();
 

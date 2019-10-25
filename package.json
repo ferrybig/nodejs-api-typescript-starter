@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node ",
+    "build": "tsc",
     "test": "jest",
+    "migrate": "typeorm migration:generate -n",
     "dev": "nodemon --exec ts-node ./src/index.ts",
     "format": "prettier --write 'src/**/*.{ts,json}'"
   },
@@ -39,6 +41,7 @@
     "helmet": "^3.21.1",
     "morgan": "^1.9.1",
     "multer": "^1.4.2",
+    "pg": "^7.12.1",
     "reflect-metadata": "^0.1.13",
     "routing-controllers": "^0.8.0",
     "signale": "^1.4.0",

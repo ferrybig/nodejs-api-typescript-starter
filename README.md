@@ -19,3 +19,4 @@ Node.js api boilerplate built on TypeScript
 - Configure sorting and filtering
 - Verify a rest api check list
 - Path aliases
+- Validate configuration
