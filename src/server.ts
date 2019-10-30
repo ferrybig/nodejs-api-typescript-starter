@@ -4,8 +4,8 @@ import express, { Application } from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
 import morgan from "morgan";
-import helmet from "helmet";
-import compression from "compression";
+// import helmet from "helmet";
+// import compression from "compression";
 import {
   useExpressServer,
   useContainer as routingUseContainer
@@ -44,10 +44,10 @@ export default class Server {
   private static configureMiddleware(): void {
     this.app.use(cors());
 
-    this.app.use(compression());
-    this.app.use(bodyParser.urlencoded({ extended: true }));
+    // this.app.use(compression());
+    // this.app.use(bodyParser.urlencoded({ extended: true }));
     this.app.use(bodyParser.json());
-    this.app.use(helmet());
+    // this.app.use(helmet());
     this.app.use(morgan("dev"));
     this.app.use(
       "/api-docs",

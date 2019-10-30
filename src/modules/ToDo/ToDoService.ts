@@ -1,18 +1,23 @@
 import { Service } from "typedi";
+import { InjectRepository } from "typeorm-typedi-extensions";
+import ToDoRepository from "./ToDoRepository";
+import ToDoEntity from "./ToDoEntity";
 
 @Service()
 export default class ToDoService {
-  getAllToDos() {
-    return [
-      {
-        name: "Item One"
-      },
-      {
-        name: "Item Two"
-      },
-      {
-        name: "Item Three"
-      }
-    ];
+  constructor(@InjectRepository() private todoRepository: ToDoRepository) {}
+
+  async getAllToDos() {
+    const todos = await this.todoRepository.find();
+    return todos;
+  }
+
+  async create(todo: ToDoEntity) {
+    try {
+      const createdTodo = await this.todoRepository.save(todo);
+      return createdTodo;
+    } catch (error) {
+      console.log(error);
+    }
   }
 }

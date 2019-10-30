@@ -1,7 +1,11 @@
-import BaseEntity from "common/BaseEntity";
-import { Entity } from "typeorm";
+// import BaseEntity from "common/BaseEntity";
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
 
-@Entity()
-export default class ToDoEntity extends BaseEntity {
+@Entity("todo")
+export default class ToDoEntity {
+  @PrimaryGeneratedColumn()
+  id: number;
+
+  @Column()
   name: string;
 }
