@@ -1,2 +1,4 @@
 {
+  "*.ts": "tslint --fix",
+  "**/*.{ts,json,md,graphql}": ["prettier --write", "git add"]
 }
