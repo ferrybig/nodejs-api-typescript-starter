@@ -1,11 +1,12 @@
-import BaseConfiguration from "common/BaseConfiguration";
-
+import BaseConfiguration from "../common/BaseConfiguration";
 import defaultConfiguration from "./default";
 
 const environment = process.env.NODE_ENV || "development";
-const environmentConfiguration = require(`./${environment}`);
+const environmentConfiguration = import(`./${environment}`);
 
-export default {
+const mergedConfig: BaseConfiguration = {
   ...defaultConfiguration,
   ...environmentConfiguration
-} as BaseConfiguration;
+};
+
+export default mergedConfig;
