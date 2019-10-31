@@ -1,6 +1,6 @@
-// import TodoRepository from "../TodoRepository";
+// import TodoRepository from "../todoRepository";
 
-jest.mock("../TodoRepository");
+jest.mock("../todoRepository");
 
 test("getAll returns a collection of todos", () => {
   expect(true).toBe(true);
