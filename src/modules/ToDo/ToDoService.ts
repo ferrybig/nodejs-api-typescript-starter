@@ -1,6 +1,6 @@
 import signale from "signale";
-import { Service } from "typedi";
-import { InjectRepository } from "typeorm-typedi-extensions";
+import {Service} from "typedi";
+import {InjectRepository} from "typeorm-typedi-extensions";
 import ToDoEntity from "./ToDoEntity";
 import ToDoRepository from "./ToDoRepository";
 

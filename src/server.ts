@@ -2,18 +2,18 @@ import bodyParser from "body-parser";
 import compression from "compression";
 import cors from "cors";
 import dotenv from "dotenv";
-import express, { Application } from "express";
+import express, {Application} from "express";
 import helmet from "helmet";
 import morgan from "morgan";
 import "reflect-metadata";
 import {
   useContainer as routingUseContainer,
-  useExpressServer
+  useExpressServer,
 } from "routing-controllers";
 import signale from "signale";
 import swaggerUi from "swagger-ui-express";
-import { Container } from "typedi";
-import { createConnection, useContainer as ormUseContainer } from "typeorm";
+import {Container} from "typedi";
+import {createConnection, useContainer as ormUseContainer} from "typeorm";
 import swaggerDocument from "./swagger.json";
 
 dotenv.config();
@@ -43,15 +43,14 @@ export default class Server {
   private static configureRoutes(): void {
     useExpressServer(this.app, {
       controllers: [`${__dirname}/**/*Controller.{ts,js}`],
-      cors: true
+      cors: true,
     });
   }
 
   private static configureMiddleware(): void {
     this.app.use(cors());
-
     this.app.use(compression());
-    this.app.use(bodyParser.urlencoded({ extended: true }));
+    this.app.use(bodyParser.urlencoded({extended: true}));
     this.app.use(bodyParser.json());
     this.app.use(helmet());
     this.app.use(morgan("dev"));

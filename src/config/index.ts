@@ -6,7 +6,7 @@ const environmentConfiguration = import(`./${environment}`);
 
 const mergedConfig: BaseConfiguration = {
   ...defaultConfiguration,
-  ...environmentConfiguration
+  ...environmentConfiguration,
 };
 
 export default mergedConfig;

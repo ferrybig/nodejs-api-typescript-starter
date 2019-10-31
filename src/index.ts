@@ -1,11 +1,9 @@
-import { createServer } from "http";
+import {createServer} from "http";
 import signale from "signale";
-
-import ApplicationServer from "./server";
 import config from "./config";
+import ApplicationServer from "./server";
 
 const applicationServer = ApplicationServer.bootstrap();
-
 const server = createServer(applicationServer);
 
 server.listen(config.PORT);
