@@ -2,7 +2,7 @@
 import {Column, Entity, PrimaryGeneratedColumn} from "typeorm";
 
 @Entity("todo")
-export default class ToDoEntity {
+export default class TodoEntity {
   @PrimaryGeneratedColumn()
   public id: number;
 

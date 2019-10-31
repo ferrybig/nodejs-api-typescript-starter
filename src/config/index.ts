@@ -1,4 +1,4 @@
-import BaseConfiguration from "../common/BaseConfiguration";
+import BaseConfiguration from "../common/baseConfiguration";
 import defaultConfiguration from "./default";
 
 const environment = process.env.NODE_ENV || "development";

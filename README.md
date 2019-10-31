@@ -1,6 +1,14 @@
-# nodejs-api-typescript-starter
+# Node.js API TypeScript Starter
 
 Node.js api boilerplate built on TypeScript
+
+## Packages Included
+
+- Express.js (Web server)
+- PostgreSQL (Default database)
+- Prettier (Code formatting stuff)
+- TSLint (Static code analyzer)
+- TypeORM (Database access)
 
 ## Future Roadmap
 
@@ -16,3 +24,4 @@ Node.js api boilerplate built on TypeScript
 - Verify a rest api check list
 - Path aliases
 - Validate configuration
+- Logging

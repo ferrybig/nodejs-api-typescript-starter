@@ -1,6 +1,6 @@
 import {Length} from "class-validator";
 
-export default class CreateToDoModel {
+export default class CreateTodoModel {
   @Length(10, 50)
   public name: string;
 }
