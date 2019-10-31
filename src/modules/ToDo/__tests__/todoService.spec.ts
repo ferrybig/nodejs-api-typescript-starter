@@ -2,6 +2,6 @@
 
 jest.mock("../TodoRepository");
 
-test("TodoService returns a collection of todos", () => {
+test("getAll returns a collection of todos", () => {
   expect(true).toBe(true);
 });
